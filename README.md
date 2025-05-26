@@ -13,5 +13,8 @@ Hey Guys ! So I will tell how to get your API Key to setup the terminal and get 
    ![image](https://github.com/user-attachments/assets/011b694b-4229-4888-bc99-d08a0e287582)
 
 5) The API KEY will be created and paste it in the terminal and you are ready to go
-   ![image](https://github.com/user-attachments/assets/97b285b0-3df9-4e82-bfc0-e3bce1a30e65)
+   ![image](https://github.com/user-attachments/assets/768552c7-4f22-49b2-a3b0-f98ba87900ce)
+
+
+Choose Your desired model and ask queries
 
