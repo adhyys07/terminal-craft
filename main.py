@@ -1,6 +1,7 @@
 import requests
 
 def get_api_key():
+    print("Grab Your Groq API Key at https://groq.com (For More Info go through Readme.md on github repo)\n")
     return input("Enter your Groq API key: ").strip()
 
 def list_models(api_key):
@@ -28,14 +29,25 @@ def choose_model(models):
     print("\nAvailable Groq Models:\n")
     for i, model in enumerate(models, 1):
         print(f"{i}. {model['id']}")
-    choice = input("\nChoose a model by number: ").strip()
-    if not choice.isdigit() or int(choice) < 1 or int(choice) > len(models):
-        print("Invalid choice.")
-        return None
-    return models[int(choice) - 1]["id"]
+
+    while True:
+        choice = input("\nChoose a model by number (or type '/exit' to quit): ").strip()
+
+        if choice.lower() == "/exit":
+            print("Exiting... Goodbye!")
+            exit()
+
+        if not choice.isdigit():
+            print("Invalid input. Please enter a valid number.")
+            continue
+
+        index = int(choice)
+        if 1 <= index <= len(models):
+            return models[index - 1]["id"]
+        else:
+            print("Invalid choice. Please select a valid model number.")
 
 def call_groq(api_key, model_id, prompt):
-    # Determine correct endpoint
     if "llama" in model_id or "chat" in model_id:
         url = "https://api.groq.com/openai/v1/chat/completions"
         data = {
@@ -81,8 +93,6 @@ def main():
         return
 
     model_id = choose_model(models)
-    if not model_id:
-        return
 
     print("\nType your prompt and press Enter to get a response.")
     print("Type '/change' to change AI model, or '/exit' to quit.\n")
@@ -94,9 +104,6 @@ def main():
             break
         elif prompt.lower() == "/change":
             model_id = choose_model(models)
-            if not model_id:
-                print("Model change cancelled.")
-                continue
             print(f"Switched to model: {model_id}\n")
             continue
         elif prompt == "":
