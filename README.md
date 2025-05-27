@@ -1,3 +1,17 @@
+1) What does this Program Do ?
+Answer - This program helps the developers and users to get response from multiple AI model at a single place preventing them to login on each website to test AI models. This programs consists of 20+ AI models from which users can ask their queries.
+
+2) How to run it ?
+Answer- Go to Releases tab download the latest exe file and run it.Input the API key (explained below how to get it) then select your model and start asking queries.
+
+3) Requirements
+Answer - You just need a good internet connectivity.
+
+4) Why I Created This ?
+Answer - I created this because many times I see developers loggin in different Generative AI sites like ChatGPT,GEMINI etc that wasted a lot of their time . I thought of creating a single platform where they can ask their queries and get response from multiple AI in a single window saving their time and boost their productivity.
+
+
+
 Hey Guys ! So I will tell how to get your API Key to setup the terminal and get answers from multiple AI models
 
 1) First go to https://groq.com/ and click on Dev Console
